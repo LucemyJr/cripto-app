@@ -1,14 +1,36 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
+import { useState   } from 'react'
+
 import './home.css'
 import {BsSearch } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-const home = () => {
+const Home = () => {
+
+  const [input, setInput] = useState("")
+
+  const navigate = useNavigate()
+  
+  function handleSubmit(e: FormEvent){
+    e.preventDefault()
+
+    if(input === "")return
+
+    navigate(`/detail/${input}`)
+  }
+
+  function handleGetMore(){
+    alert("teste")
+  }
+
   return (
     <main className='main-container'>
-      <form className="form">
-        <input type="text"
+      <form className="form" onSubmit={handleSubmit}>
+        <input
+        type="text"
         placeholder='Digite o nome da moeda: Ex. Bitcoin'
+        value={input}
+        onChange={ (e) => setInput(e.target.value)}
         />
         <button type='submit'>
           <BsSearch size={30} color='#FFF'/>
@@ -56,8 +78,12 @@ const home = () => {
         </tbody>
       </table>
 
+    <button className="buttonMore" onClick={handleGetMore}>
+      Carregar mais...
+    </button>
+
     </main>
   )
 }
 
-export default home
+export default Home

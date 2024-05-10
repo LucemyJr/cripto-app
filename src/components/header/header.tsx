@@ -3,7 +3,7 @@ import './header.css'
 import LogoImg from "../../assets/logo.svg"
 import { Link } from 'react-router-dom'
 
-const header = () => {
+const Header = () => {
   return (
     <header className= 'container'>
       <Link to="/">
@@ -13,4 +13,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header
