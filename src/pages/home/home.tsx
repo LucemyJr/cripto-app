@@ -5,7 +5,7 @@ import './home.css'
 import {BsSearch } from 'react-icons/bs'
 import { Link, useNavigate } from 'react-router-dom'
 
-interface CoinProps{
+export interface CoinProps{
   id: string;
   name: string;
   symbol: string;
