@@ -87,9 +87,35 @@ table td{
     border-radius: 8px;
 }
 
+.name{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.cripto-logo{
+    width: 20px;
+    height: 20px;
+    transition: all;
+}
+
+.cripto-logo:hover{
+    transform: scale(1.5);
+    z-index: 99;
+}
+
+.cripto-name:hover{
+    color: #a8a8a8;
+    transition: 0.2s;
+}
+
 /* RESPONSIVIDADE */
 
 @media screen and (max-width: 600px){
+
+    .name img{
+        margin-left: 14px;
+    }
 
     table{
         border: 0;
