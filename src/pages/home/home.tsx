@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import './home.css'
 import {BsSearch } from 'react-icons/bs'
 import { Link, useNavigate } from 'react-router-dom'
-import { off } from 'process'
 
 export interface CoinProps{
   id: string;
@@ -32,7 +31,7 @@ const Home = () => {
 
   const [input, setInput] = useState("")
   const [coins, setCoins] = useState<CoinProps[]>([]);
-  const [offset, setOffset] = useState(0)
+  const [offset, setOffset] = useState(0);
 
   const navigate = useNavigate()
 
@@ -66,10 +65,10 @@ const Home = () => {
 
           return formatted
         });
-        
+  
         const listCoins = [...coins, ...formattedResult]
         setCoins(listCoins);
-
+        
       });
   }
   
